@@ -2,4 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
+input[type="radio"] {
+  opacity: 0;
+}
 
+input[type="radio"] + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  color: white;
+  z-index: 3;
+  font-weight: bold;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: -12px;
+  top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: hsla(217, 12%, 63%, 0.151);
+}
+
+input[type="radio"] + label:hover::before {
+  background-color: hsl(25, 97%, 53%);
+  z-index: -1;
+}
+
+input[type="radio"] + label::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: -12px;
+  top: -5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  /* background: lightcoral; */
+}
+input[type="radio"]:checked + label::after {
+  background: hsl(217, 12%, 63%);
+  z-index: -1;
+}
+
+input[type="radio"]:focus + label::before {
+  box-shadow: 0 0px 8px hsl(217, 12%, 63%);
+  border: 2px solid hsl(217, 12%, 63%);
+}

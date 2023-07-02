@@ -522,8 +522,16 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mt-4 {
-  margin-top: 1rem;
+.ml-4 {
+  margin-left: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mt-16 {
+  margin-top: 4rem;
 }
 
 .flex {
@@ -558,8 +566,28 @@ video {
   width: 100%;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[310px\] {
+  width: 310px;
+}
+
+.w-\[340px\] {
+  width: 340px;
+}
+
+.min-w-\[280px\] {
+  min-width: 280px;
+}
+
 .min-w-\[320px\] {
   min-width: 320px;
+}
+
+.min-w-\[300px\] {
+  min-width: 300px;
 }
 
 .max-w-\[375px\] {
@@ -580,6 +608,10 @@ video {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .rounded-\[9999px\] {
@@ -621,6 +653,10 @@ video {
   padding: 2rem;
 }
 
+.p-\[1rem\] {
+  padding: 1rem;
+}
+
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
@@ -629,10 +665,6 @@ video {
 .py-\[8px\] {
   padding-top: 8px;
   padding-bottom: 8px;
-}
-
-.pb-8 {
-  padding-bottom: 2rem;
 }
 
 .pt-4 {
@@ -670,4 +702,64 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+input[type="radio"] {
+  opacity: 0;
+}
 
+input[type="radio"] + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  color: white;
+  z-index: 3;
+  font-weight: bold;
+}
+
+input[type="radio"] + label::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: -12px;
+  top: -5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-color: hsla(217, 12%, 63%, 0.151);
+}
+
+input[type="radio"] + label:hover::before {
+  background-color: hsl(25, 97%, 53%);
+  z-index: -1;
+}
+
+input[type="radio"] + label::after {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  left: -12px;
+  top: -5px;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  /* background: lightcoral; */
+}
+
+input[type="radio"]:checked + label::after {
+  background: hsl(217, 12%, 63%);
+  z-index: -1;
+}
+
+input[type="radio"]:focus + label::before {
+  box-shadow: 0 0px 8px hsl(217, 12%, 63%);
+  border: 2px solid hsl(217, 12%, 63%);
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:text-Orange:hover {
+  --tw-text-opacity: 1;
+  color: hsl(25 97% 53% / var(--tw-text-opacity));
+}
