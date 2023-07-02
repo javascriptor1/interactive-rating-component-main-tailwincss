@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="thanks.css" />
+    <title>Frontend Mentor | Interactive rating component</title>
+  </head>
+  <body>
+    <!-- Rating state start -->
+
+    <main class="thanks-div">
+      <div class="star-div">
+        <img src="images/illustration-thank-you.svg" alt="Thank you image" />
+      </div>
+
+      <!-- Thank you state start -->
+      <p class="selection">
+        You selected <span class="sent-rating"> </span>out of 5
+      </p>
+      <!-- Add rating here -->
+      <p class="thanks">Thank you!</p>
+      <p class="thanks-words">
+        We appreciate you taking the time to give a rating. If you ever need
+        more support, don’t <br />hesitate to get in touch!
+      </p>
+      <!-- Thank you state end -->
+    </main>
+
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">MKF</a>
+    </footer>
+
+    <script>
+      let queryString = location.search.substring(1);
+      const votingValue = document.querySelector(".sent-rating");
+      votingValue.textContent = queryString.slice(-1) + ' ';
+    </script>
+  </body>
+</html>
